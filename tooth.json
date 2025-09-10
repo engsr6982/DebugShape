@@ -1,0 +1,39 @@
+{
+    "format_version": 3,
+    "format_uuid": "284f771f-2c9a-4d73-9f4f-8492495a924d",
+    "tooth": "github.com/engsr6982/DebugShape",
+    "version": "0.0.0",
+    "info": {
+        "name": "DebugShape",
+        "description": "minecraft bedrock debug shape packet wrapper",
+        "tags": [
+            "platform:levilamina",
+            "type:mod",
+            "type:library"
+        ],
+        "avatar_url": ""
+    },
+    "variants": [
+        {
+            "platform": "win-x64",
+            "dependencies": {
+                "github.com/LiteLDev/LeviLamina": "1.4.*"
+            },
+            "assets": [
+                {
+                    "type": "zip",
+                    "urls": [
+                        "https://{{tooth}}/releases/download/v{{version}}/DebugShape-windows-x64.zip"
+                    ],
+                    "placements": [
+                        {
+                            "type": "dir",
+                            "src": "DebugShape/",
+                            "dest": "plugins/DebugShape/"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
