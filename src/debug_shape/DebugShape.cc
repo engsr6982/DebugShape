@@ -44,6 +44,8 @@ DebugShape::DebugShape(DebugShapeType type, Vec3 const& loc) {
     mPacketData.mLocation  = loc;
 }
 
+DebugShape::~DebugShape() { remove(); }
+
 uint64_t                  DebugShape::getId() const { return mPacketData.mNetworkId; }
 DebugShapeType            DebugShape::getType() const { return mPacketData.mShapeType->value(); }
 std::optional<Vec3>       DebugShape::getPosition() const { return mPacketData.mLocation; }

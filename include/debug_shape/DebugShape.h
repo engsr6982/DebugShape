@@ -31,7 +31,7 @@ private:
 
 public:
     DBG_SHAPE_API explicit DebugShape(DebugShapeType type, Vec3 const& loc);
-    virtual ~DebugShape() = default;
+    virtual ~DebugShape();
 
     DBG_SHAPE_ND_API uint64_t getId() const; // 唯一id
 
