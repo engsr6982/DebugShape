@@ -1,32 +1,32 @@
-#include "mod/MyMod.h"
+#include "ModEntry.h"
 
 #include "ll/api/mod/RegisterHelper.h"
 
-namespace my_mod {
+namespace debug_shape {
 
-MyMod& MyMod::getInstance() {
-    static MyMod instance;
+ModEntry& ModEntry::getInstance() {
+    static ModEntry instance;
     return instance;
 }
 
-bool MyMod::load() {
+bool ModEntry::load() {
     getSelf().getLogger().debug("Loading...");
     // Code for loading the mod goes here.
     return true;
 }
 
-bool MyMod::enable() {
+bool ModEntry::enable() {
     getSelf().getLogger().debug("Enabling...");
     // Code for enabling the mod goes here.
     return true;
 }
 
-bool MyMod::disable() {
+bool ModEntry::disable() {
     getSelf().getLogger().debug("Disabling...");
     // Code for disabling the mod goes here.
     return true;
 }
 
-} // namespace my_mod
+} // namespace debug_shape
 
-LL_REGISTER_MOD(my_mod::MyMod, my_mod::MyMod::getInstance());
+LL_REGISTER_MOD(debug_shape::ModEntry, debug_shape::ModEntry::getInstance());
