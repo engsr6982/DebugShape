@@ -34,5 +34,5 @@ target("DebugShape") -- Change this to your mod name.
     set_languages("c++20")
     set_symbols("debug")
     add_headerfiles("include/(debug_shape/**.h)")
-    add_files("src/**.cpp")
+    add_files("src/**.cpp", "src/**.cc")
     add_includedirs("src", "include")
