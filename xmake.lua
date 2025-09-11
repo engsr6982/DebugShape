@@ -23,6 +23,12 @@ option("target_type")
     set_values("server", "client")
 option_end()
 
+option("test")
+    set_default(false)
+    set_showmenu(true)
+option_end()
+
+
 target("DebugShape") -- Change this to your mod name.
     add_rules("@levibuildscript/linkrule")
     add_rules("@levibuildscript/modpacker")
@@ -36,3 +42,9 @@ target("DebugShape") -- Change this to your mod name.
     add_headerfiles("include/(debug_shape/**.h)")
     add_files("src/**.cpp", "src/**.cc")
     add_includedirs("src", "include")
+
+    if has_config("test") then
+        add_defines("DS_TEST")
+        add_includedirs("tests")
+        add_files("tests/**.cc")
+    end

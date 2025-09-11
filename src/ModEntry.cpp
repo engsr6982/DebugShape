@@ -2,6 +2,10 @@
 
 #include "ll/api/mod/RegisterHelper.h"
 
+#ifdef DS_TEST
+#include "DebugShapeTest.h"
+#endif
+
 namespace debug_shape {
 
 ModEntry& ModEntry::getInstance() {
@@ -9,23 +13,16 @@ ModEntry& ModEntry::getInstance() {
     return instance;
 }
 
-bool ModEntry::load() {
-    getSelf().getLogger().debug("Loading...");
-    // Code for loading the mod goes here.
-    return true;
-}
+bool ModEntry::load() { return true; }
 
 bool ModEntry::enable() {
-    getSelf().getLogger().debug("Enabling...");
-    // Code for enabling the mod goes here.
+#ifdef DS_TEST
+    tests::DebugShapeTest::setup();
+#endif
     return true;
 }
 
-bool ModEntry::disable() {
-    getSelf().getLogger().debug("Disabling...");
-    // Code for disabling the mod goes here.
-    return true;
-}
+bool ModEntry::disable() { return true; }
 
 } // namespace debug_shape
 
