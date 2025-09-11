@@ -16,28 +16,42 @@ using ShapeID = uint64_t;
 
 inline constexpr ShapeID InvalidShapeID = 0;
 
-class IDebugShape {
+
+class IDrawerInterface {
+public:
+    DSAPI virtual ~IDrawerInterface() = default;
+
+    virtual void       draw() const                          = 0; // sendToClients
+    virtual void       draw(Player& player) const            = 0; // sendToPlayer
+    virtual void       draw(DimensionType dimension) const   = 0; // sendToDimension
+    virtual void       remove() const                        = 0;
+    virtual void       remove(Player& player) const          = 0;
+    virtual void       remove(DimensionType dimension) const = 0;
+    DSAPI virtual void update() const;
+    DSAPI virtual void update(Player& player) const;
+    DSAPI virtual void update(DimensionType dimension) const;
+};
+
+
+class IDebugShape : public IDrawerInterface {
 protected:
     ShapeDataPacket mShapeData;
 
-    friend class DebugShapeDrawer;
-
 public:
     DSAPI IDebugShape();
-    DSAPI virtual ~IDebugShape();
+    DSAPI ~IDebugShape() override;
 
     IDebugShape(const IDebugShape&)            = delete;
     IDebugShape& operator=(const IDebugShape&) = delete;
 
-    DSAPI virtual void draw() const;                        // sendToClients
-    DSAPI virtual void draw(Player& player) const;          // sendToPlayer
-    DSAPI virtual void draw(DimensionType dimension) const; // sendToDimension
-    DSAPI virtual void update() const;
-    DSAPI virtual void update(Player& player) const;
-    DSAPI virtual void update(DimensionType dimension) const;
-    DSAPI virtual void remove() const;
-    DSAPI virtual void remove(Player& player) const;
-    DSAPI virtual void remove(DimensionType dimension) const;
+    DSNDAPI virtual ShapeDataPacket const& serialize() const final;
+
+    DSAPI void draw() const override;
+    DSAPI void draw(Player& player) const override;
+    DSAPI void draw(DimensionType dimension) const override;
+    DSAPI void remove() const override;
+    DSAPI void remove(Player& player) const override;
+    DSAPI void remove(DimensionType dimension) const override;
 };
 
 
