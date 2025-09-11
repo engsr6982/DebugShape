@@ -11,7 +11,7 @@ namespace debug_shape {
  */
 class DebugSphere : public DebugShape {
 public:
-    DBG_SHAPE_API explicit DebugSphere(Vec3 const& loc);
+    DSNDAPI explicit DebugSphere(Vec3 const& loc);
 };
 
 } // namespace debug_shape

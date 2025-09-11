@@ -16,15 +16,15 @@ class DebugShapeDrawer {
 public:
     DebugShapeDrawer() = delete;
 
-    DBG_SHAPE_API static void drawShape(IDebugShape const* shape, Player* player);
-    DBG_SHAPE_API static void drawShape(IDebugShape const* shape, DimensionType dimension);
-    DBG_SHAPE_API static void drawShapes(std::vector<IDebugShape const*> const& shapes, Player* player);
-    DBG_SHAPE_API static void drawShapes(std::vector<IDebugShape const*> const& shapes, DimensionType dimension);
+    DSAPI static void drawShape(IDebugShape const* shape, Player* player);
+    DSAPI static void drawShape(IDebugShape const* shape, DimensionType dimension);
+    DSAPI static void drawShapes(std::vector<IDebugShape const*> const& shapes, Player* player);
+    DSAPI static void drawShapes(std::vector<IDebugShape const*> const& shapes, DimensionType dimension);
 
-    DBG_SHAPE_API static void removeShape(IDebugShape const* shape, Player* player);
-    DBG_SHAPE_API static void removeShape(IDebugShape const* shape, DimensionType dimension);
-    DBG_SHAPE_API static void removeShapes(std::vector<IDebugShape const*> const& shapes, Player* player);
-    DBG_SHAPE_API static void removeShapes(std::vector<IDebugShape const*> const& shapes, DimensionType dimension);
+    DSAPI static void removeShape(IDebugShape const* shape, Player* player);
+    DSAPI static void removeShape(IDebugShape const* shape, DimensionType dimension);
+    DSAPI static void removeShapes(std::vector<IDebugShape const*> const& shapes, Player* player);
+    DSAPI static void removeShapes(std::vector<IDebugShape const*> const& shapes, DimensionType dimension);
 };
 
 

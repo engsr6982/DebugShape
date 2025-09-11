@@ -1,4 +1,6 @@
 #pragma once
+#include "debug_shape/Macro.h"
+
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/network/packet/PacketShapeData.h"
 #include "mc/scripting/modules/minecraft/debugdrawer/ScriptDebugShapeType.h"
@@ -21,21 +23,21 @@ protected:
     friend class DebugShapeDrawer;
 
 public:
-    IDebugShape();
-    virtual ~IDebugShape();
+    DSAPI IDebugShape();
+    DSAPI virtual ~IDebugShape();
 
     IDebugShape(const IDebugShape&)            = delete;
     IDebugShape& operator=(const IDebugShape&) = delete;
 
-    virtual void draw() const;                        // sendToClients
-    virtual void draw(Player& player) const;          // sendToPlayer
-    virtual void draw(DimensionType dimension) const; // sendToDimension
-    virtual void update() const;
-    virtual void update(Player& player) const;
-    virtual void update(DimensionType dimension) const;
-    virtual void remove() const;
-    virtual void remove(Player& player) const;
-    virtual void remove(DimensionType dimension) const;
+    DSAPI virtual void draw() const;                        // sendToClients
+    DSAPI virtual void draw(Player& player) const;          // sendToPlayer
+    DSAPI virtual void draw(DimensionType dimension) const; // sendToDimension
+    DSAPI virtual void update() const;
+    DSAPI virtual void update(Player& player) const;
+    DSAPI virtual void update(DimensionType dimension) const;
+    DSAPI virtual void remove() const;
+    DSAPI virtual void remove(Player& player) const;
+    DSAPI virtual void remove(DimensionType dimension) const;
 };
 
 

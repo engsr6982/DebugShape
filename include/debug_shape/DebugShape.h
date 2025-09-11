@@ -17,34 +17,34 @@ namespace debug_shape {
  */
 class DebugShape : public IDebugShape {
 public:
-    DBG_SHAPE_API explicit DebugShape(DebugShapeType type, Vec3 const& loc);
-    virtual ~DebugShape() = default;
+    DSNDAPI explicit DebugShape(DebugShapeType type, Vec3 const& loc);
 
-    DBG_SHAPE_ND_API ShapeID getId() const; // 唯一id
+    DSNDAPI virtual ShapeID getId() const final; // 唯一id
 
-    DBG_SHAPE_ND_API DebugShapeType getType() const; // 形状类型
+    DSNDAPI virtual DebugShapeType getType() const final; // 形状类型
 
-    DBG_SHAPE_ND_API std::optional<Vec3> getPosition() const; // 位置
+    DSNDAPI virtual std::optional<Vec3> getPosition() const; // 位置
 
-    DBG_SHAPE_API void setPosition(Vec3 const& loc);
+    DSAPI virtual void setPosition(Vec3 const& loc);
 
-    DBG_SHAPE_ND_API std::optional<Vec3> getRotation() const; // 旋转
+    DSNDAPI virtual std::optional<Vec3> getRotation() const; // 旋转
 
-    DBG_SHAPE_API void setRotation(std::optional<Vec3> rot);
+    DSAPI virtual void setRotation(std::optional<Vec3> rot);
 
-    DBG_SHAPE_ND_API std::optional<float> getScale() const; // 缩放
+    DSNDAPI virtual std::optional<float> getScale() const; // 缩放
 
-    DBG_SHAPE_API void setScale(std::optional<float> s);
+    DSAPI virtual void setScale(std::optional<float> s);
 
-    DBG_SHAPE_ND_API std::optional<mce::Color> getColor() const; // 颜色
+    DSNDAPI virtual std::optional<mce::Color> getColor() const; // 颜色
 
-    DBG_SHAPE_API void setColor(std::optional<mce::Color> c);
+    DSAPI virtual void setColor(std::optional<mce::Color> c);
 
-    DBG_SHAPE_ND_API bool hasDuration() const; // 是否有持续时间
 
-    DBG_SHAPE_ND_API std::optional<float> getTotalTimeLeft() const; // 剩余时间
+    DSNDAPI virtual bool hasDuration() const; // 是否有持续时间
 
-    DBG_SHAPE_API void setTotalTimeLeft(std::optional<float> t);
+    DSNDAPI virtual std::optional<float> getTotalTimeLeft() const; // 剩余时间
+
+    DSAPI virtual void setTotalTimeLeft(std::optional<float> t);
 };
 
 

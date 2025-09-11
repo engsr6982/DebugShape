@@ -10,19 +10,19 @@ namespace debug_shape {
  */
 class DebugArrow : public DebugLine {
 public:
-    DBG_SHAPE_API explicit DebugArrow(Vec3 const& start, Vec3 const& end);
+    DSNDAPI explicit DebugArrow(Vec3 const& start, Vec3 const& end);
 
-    DBG_SHAPE_ND_API std::optional<float> getHeadLength() const; // 箭头长度
+    DSNDAPI virtual std::optional<float> getHeadLength() const; // 箭头长度
 
-    DBG_SHAPE_API void setHeadLength(std::optional<float> l);
+    DSAPI virtual void setHeadLength(std::optional<float> l);
 
-    DBG_SHAPE_ND_API std::optional<float> getHeadRadius() const; // 箭头半径
+    DSNDAPI virtual std::optional<float> getHeadRadius() const; // 箭头半径
 
-    DBG_SHAPE_API void setHeadRadius(std::optional<float> r);
+    DSAPI virtual void setHeadRadius(std::optional<float> r);
 
-    DBG_SHAPE_ND_API std::optional<uint8_t> getHeadSegments() const; // 箭头分段数
+    DSNDAPI virtual std::optional<uint8_t> getHeadSegments() const; // 箭头分段数
 
-    DBG_SHAPE_API void setHeadSegments(std::optional<uint8_t> s);
+    DSAPI virtual void setHeadSegments(std::optional<uint8_t> s);
 };
 
 } // namespace debug_shape

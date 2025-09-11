@@ -11,11 +11,11 @@ namespace debug_shape {
  */
 class DebugBox : public DebugShape {
 public:
-    DBG_SHAPE_API explicit DebugBox(Vec3 const& loc);
+    DSNDAPI explicit DebugBox(Vec3 const& loc);
 
-    DBG_SHAPE_ND_API std::optional<Vec3> getBound() const; // 获取边界
+    DSNDAPI virtual std::optional<Vec3> getBound() const; // 获取边界
 
-    DBG_SHAPE_API void setBound(Vec3 const& bound);
+    DSAPI virtual void setBound(Vec3 const& bound);
 };
 
 } // namespace debug_shape

@@ -11,7 +11,7 @@ namespace debug_shape {
  */
 class DebugCircle : public DebugShape {
 public:
-    DBG_SHAPE_API explicit DebugCircle(Vec3 const& center);
+    DSNDAPI explicit DebugCircle(Vec3 const& center);
 };
 
 } // namespace debug_shape
